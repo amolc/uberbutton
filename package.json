@@ -1,0 +1,21 @@
+{
+  "name": "uberbutton",
+  "version": "1.0.0",
+  "description": "This uber button helps request a car at your door",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon uberbutton.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/amolc/uberbutton.js"
+  },
+  "keywords": [
+    "Uber",
+    "Button",
+    "IOT",
+    "nodemcu"
+  ],
+  "author": "Amol Chawathe",
+  "license": "ISC"
+}
