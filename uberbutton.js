@@ -2,9 +2,12 @@ var request = require('request');
 var config  = require('./config');
 var express = require('express');
 var Uber = require('node-uber');
+
 var app = express();
 
 var TOKEN   = null;
+
+app.use('/', express.static('web'));
 
 var uber = new Uber({
   client_id: config.uber.clientId,
@@ -31,18 +34,22 @@ app.get('/api/callback', function(request, response) {
         console.log(access_token);
        // store the user id and associated access token
        // redirect the user back to your actual app
-       //response.redirect('/web/index.html');
+       response.redirect('/dashboard.html');
 
-        uber.products.getAllForLocation(3.1357, 101.6880, function (err, res) {
-          if (err) console.error(err);
-          else console.log(res);
-        });
+       
 
      }
    });
 });
 
 
+var getproducts = function(lat,lon){
+    var productlist =  uber.products.getAllForLocation(3.1357, 101.6880, function (err, res) {
+          if (err) console.error(err);
+          else console.log(res);
+        });
+    return productlist ;
+}
 
 var server = app.listen(18000, function() {
   console.log('Visit http://localhost:18000/login');
