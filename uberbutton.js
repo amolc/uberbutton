@@ -34,8 +34,11 @@ app.get('/api/callback', function(request, response) {
         console.log(access_token);
        // store the user id and associated access token
        // redirect the user back to your actual app
-       response.redirect('/dashboard.html');
-
+       //response.redirect('/dashboard.html');
+         uber.products.getAllForLocation(3.1357, 101.6880, function (err, res) {
+          if (err) console.error(err);
+          else console.log(res);
+        });
        
 
      }
