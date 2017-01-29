@@ -1,0 +1,153 @@
+<div class="cardshit shift-right">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-10 col-md-offset-1 row panel-title">
+                    <h3>Edit a Product</h3>
+                </div>
+                
+                <div class="col-md-10 col-md-offset-2 editform">
+                    
+                                <form data-ng-submit="updateProduct(productDetails)" name="productform" 
+                                    id="productform" class="form-horizontal" enctype="multipart/form-data" novalidate>
+               
+                <div class="col-md-9">
+                        <div class="form-group">
+                                        <label for="product_name" class="control-label">ProductName</label>
+                                        <input type="text" class="form-control" placeholder="Enter Ad Title" data-ng-model="    productDetails.Ad_Title" name= "Ad_Title" id= "Ad_Title" required>
+                                <span>
+                                    <div data-ng-messages="productform.$submitted && productform.Ad_Title.$error" role="alert"  class="error_msg">
+                                        <div data-ng-message="required">Please enter ad title</div>
+                                    </div>
+                                </span>
+                        </div>
+                </div>
+
+
+                <div class="col-md-9">
+                        <div class="form-group">
+                                    <label for="product_description" class="control-label">Description</label>
+                                    <textarea class="form-control" placeholder="Enter description" data-ng-model="productDetails.Description" name= "Description" id= "Description" required></textarea>
+
+                                <span>
+                                    <div data-ng-messages="productform.$submitted && productform.Description.$error" role="alert" class="error_msg">
+                                        <div data-ng-message="required">Please enter description</div>
+                                    </div>
+                                </span>
+                        </div>
+                </div>
+                
+                <div class="col-md-9">
+                        <div class="form-group">
+                                    <label for="field-1" control-label">SuperCategory</label>
+                                
+                                    <select class="form-control" ng-model="parentCat.maincatg_id" ng-options="v.maincatg_name for v in parentCat.values track by v.maincatg_id">
+                                            <option value="">Super Category</option>
+                                    </select>
+
+
+<!-- <select class="form-control" data-ng-model="maincatg_id" ng-options="maincategory.maincatg_name for maincategory in parentCat track by maincategory.maincatg_id" required>
+<option value="">Super Category</option>
+</select> -->
+                                <div ng-messages="categoryForm.maincatg_id.$error">
+                                        <div ng-message="required">This field is required</div>
+                                </div>
+                        </div>
+                </div>
+           
+
+            <div class="col-md-9">
+                    <div class="form-group">
+                                <label for="field-1" control-label">Category</label>
+                                    <select class="form-control" ng-model="prodCat.catg_id" ng-options="v.catg_name for v in prodCat.values track by v.catg_id">
+                                    <option value="">Category</option>
+                                    </select>
+<!-- <select class="form-control" data-ng-model="Catg_id" ng-options="category.catg_name for category in prodCat track by category.catg_id" required>
+<option value="">Category</option>
+</select> -->
+                            <div ng-messages="categoryForm.Catg_id.$error">
+                                <div ng-message="required">This field is required</div>
+                            </div>
+                    </div>
+            </div>
+
+            <div class="col-md-9 row">
+                <div class="form-group">
+                        <div class="col-md-6">
+                          <label for="Price" class="control-label">Price</label>
+                                
+                                <select class="form-control" ng-model="CurrencyList.CurrencyCode" ng-options="v.CurrencyCode for v in CurrencyList.values track by v.CurrencyCode">
+                                <option value="">Currency</option>
+                                 </select>            
+                                </div>  
+
+                                    
+                                 <div class="col-md-6">   
+                                 
+                                <input type="text" style="margin-top: 27px;" class="form-control" id="text-input" placeholder="Enter Price" data-ng-model="productDetails.Price" name= "Price" required>
+                                
+                                <span>
+                                <div data-ng-messages="productform.$submitted && productform.Price.$error" role="alert" class="error_msg">
+                                    <div data-ng-message="required">Please enter product price</div>
+                                </div>
+                            </span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <div class="col-md-9">
+                    <div class="form-group">
+                            <label for="password" class="control-label">Shipping Options</label>
+                        
+                                    <input type="text" class="form-control" id="text-input" name="Shipping" id="Shipping" placeholder="Enter Shipping Option" data-ng-model="productDetails.Shipping" required>
+                                <span ng-if="productform.$submitted">
+                                    <div data-ng-messages="productform.$submitted && productform.Shipping.$error" role="alert" class="error_msg">
+                                        <div data-ng-message="required">Please Enter Shipping Options</div>
+                                    </div>
+                                </span>
+                        </div>
+                </div>
+
+            <div class="col-md-9">                
+                    <div class="form-group">
+                        <div class="col-md-3">
+                        <label for="files" class="control-label">Upload&nbsp;Images</label>
+                        </div>
+                        <div class="col-md-4" style="margin-top: 10px;">
+                        <input id="file_browse1" type='file' name="productimage" onchange="angular.element(this).scope().updateattachment('file_browse1');" accept="image/*" multiple />
+         <!-- <input id="browse" type="file" onchange="previewFiles()" multiple> -->
+                            </div>
+            </div>
+            </div>
+
+                         <input type="hidden" ng-model='productDetails.UProduct_id'>
+                                <div class="col-md-offset-3 col-md-9">  
+                                    <div class="form-group">
+                                     <!-- Button -->
+                                   <a href="#">
+                                         <button type="submit" class="btnthree">Save</button>
+                                    </a> 
+                                    <!--   <button id="btn-save" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Save</button> -->
+                                                </div>
+                                          </div>
+                                           </form>
+
+                        </div>
+         
+      <div class="col-md-12 col-md-offset-1 row" >
+                 <div class="col-md-4 editimage">
+                    <img src="images/img1.jpg">
+                 </div>
+                 <div class="col-md-4 editimage">
+                    <img src="images/img1.jpg">
+                 </div>
+                 <div class="col-md-4 editimage">
+                    <img src="images/img1.jpg">
+                 </div>
+           </div>     
+         </div>
+    </div>
+
+</div>
+    

@@ -1,0 +1,87 @@
+<div>
+    <div class="page-container">
+        <header ng-include="'partials/left_menu.html'"></header>
+        <div class="main-content">
+            <header ng-include="'partials/user_menu.html'"></header>
+            <hr />
+            <div class="row"> </div>
+            <h2 class="table_heading">Edit Item</h2>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> </div>
+                                <form role="form" name="edititemform" class="form-horizontal form-groups-bordered" ng-submit='edititem(edititemform ,itemdata)' novalidate>
+                                    <div class="form-group">
+                                        <label for="field-1" class="col-sm-3 control-label">Select Category</label>
+                                        <div class="col-sm-5">
+                                          <select class="form-control" ng-model="findcategory.category_id" ng-options="category.category_id as category.category_name for category in Category" name="category" required>
+                                            </select>
+                                            <div ng-messages="edititemform.$submitted && edititemform.item_name.$error" class="error_msg">
+                                                <div ng-message="required">Select Category</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-1" class="col-sm-3 control-label">Item Name</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-1" name="item_name" placeholder="Enter Title" ng-model='itemdata.item_name'>
+                                            <div ng-messages="edititemform.$submitted && edititemform.item_name.$error" class="error_msg">
+                                                <div ng-message="required">Enter Name</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-1" class="col-sm-3 control-label">Item Price</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-1" placeholder="Enter alias" ng-model='itemdata.item_price' name="alias" required>
+                                            <div ng-messages="edititemform.$submitted && edititemform.alias.$error" class="error_msg">
+                                                <div ng-message="required">Enter Price</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-2" class="col-sm-3 control-label">Item Description</label>
+                                        <div class="col-sm-8">
+                                             <text-angular  name="item_description" class="textAngular newseditor" placeholder="Enter Description" ng-model="itemdata.item_description" required></text-angular>
+                                            <div ng-messages="edititemform.$submitted && edititemform.item_description.$error" class="error_msg">
+                                                <div ng-message="required">Enter Description</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-2" class="col-sm-3 control-label">Item Image</label>
+                                        <div class="col-sm-5" style="padding-bottom: 10px;">
+                                            <input accept="image/*" class="form-control" id="file_browse1" onchange="angular.element(this).scope().updateattachment1()" type="file" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-if="itemdata.item_imagename">
+                                      <label for="field-2" class="col-sm-3 control-label">Image</label>
+                                        <div class="col-sm-5" style="padding-bottom: 10px;">
+                                            <div id="fileDisplayArea">
+                                                <img ng-src="{{imageURL}}web/{{businessSession.business_id}}/{{itemdata.item_imagename}}" style="max-width: 100%;width: 330px;padding-left: 51px;">
+                                                <br><br><span class="label label-primary pull-right" ng-click="clearEditImage()">Remove Image</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-5">
+                                            <button type="submit" class="btn btn_back">Edit item</button>
+                                            <p ng-show="showupdatecatmsg" class="success_msg" style="text-align: center;font-size: medium;">{{updatecatmsg}}</p>
+                                            <p ng-show="showupdateerrcatmsg" class="error_msg" style="text-align: center;font-size: medium;">{{updateerrcatmsg}}</p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+        </div>
+
+    </div>
+
+</div>

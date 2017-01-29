@@ -1,0 +1,60 @@
+<div>
+    <div class="page-container">
+        <header ng-include="'partials/left_menu.html'"></header>
+        <div class="main-content">
+            <header ng-include="'partials/user_menu.html'"></header>
+            <hr />
+            <div class="row"> </div>
+            <h2 class="table_heading">View item</h2>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> </div>
+                                <form role="form" class="form-horizontal form-groups-bordered">
+                                    <div class="form-group">
+                                        <label for="field-1" class="col-sm-3 control-label">Item Name</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-1" placeholder="Item Name" ng-model='itemdata.item_name' readonly="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-1" class="col-sm-3 control-label">Item price</label>
+
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="field-1" placeholder="Item Price" ng-model='itemdata.item_price' readonly="true">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="field-2" class="col-sm-3 control-label">Description</label>
+                                        <div class="col-sm-5">
+                                            <!-- <input type="text" class="form-control" id="field-2" placeholder="Enter Description" ng-model='itemdata.item_description' readonly="true"> -->
+                                            <textarea name="name" class="form-control" id="field-2" placeholder="Item Description" ng-model='itemdata.item_description' readonly="true" rows="5" cols="60"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" ng-if="itemdata.item_imagename">
+                                        <label for="field-2" class="col-sm-3 control-label">Item Image</label>
+                                        <div class="col-sm-5">
+                                            <!-- <input type="text" class="form-control" id="field-2" placeholder="Enter Description" ng-model='itemdata.item_description' readonly="true"> -->
+                                            <img ng-src="{{imageURL}}web/{{businessSession.business_id}}/{{itemdata.item_imagename}}" style="max-width: 100%;width: 330px;padding-left: 51px;">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-5">
+                                            <button ng-click="goto('item')" type="button" class="btn btn_back">Back</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+        </div>
+
+    </div>
+
+</div>

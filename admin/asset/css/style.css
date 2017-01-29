@@ -1,0 +1,280 @@
+/*!
+ *
+ *
+ * Material Design for Bootstrap
+ * www.mdbootstrap.com
+ *
+ *
+ */
+/*********************
+  Mixins
+**********************/
+/*********************
+  VARIABLES
+**********************/
+/*********************
+  GENERAL
+**********************/
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/lato-regular-webfont.eot');
+    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-regular-webfont.woff2') format('woff2'),
+         url('../fonts/lato-regular-webfont.woff') format('woff'),
+         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'latoregular';
+}
+
+/*********************
+  NAVIGATION
+**********************/
+
+
+/*********************
+  TEMPLATE COLORS
+**********************/
+.btn.btn-primary{
+  background: #f9c100;
+}
+.pt-color {
+  background-color: #1C2331 !important;
+}
+
+.st-color {
+  background-color: #4D5668 !important;
+}
+
+.et-color {
+  background-color: #3F729B !important;
+}
+
+.btn-ptc {
+  background-color: #1C2331 !important;
+}
+
+.btn-ptc:hover {
+  background-color: #2f3a51 !important;
+}
+
+.btn-ptc:focus {
+  background-color: #2f3a51 !important;
+}
+
+.btn-stc {
+  background-color: #4D5668 !important;
+}
+
+.btn-stc:hover {
+  background-color: #636e85 !important;
+}
+
+.btn-stc:focus {
+  background-color: #636e85 !important;
+}
+
+.btn-etc {
+  background-color: #3F729B !important;
+}
+
+.btn-etc:hover {
+  background-color: #548cb9 !important;
+}
+
+.btn-etc:focus {
+  background-color: #548cb9 !important;
+}
+
+.fb-bg {
+  background-color: #3B5998;
+}
+
+.tw-bg {
+  background-color: #55ACEE;
+}
+
+.gplus-bg {
+  background-color: #DD4B39;
+}
+.gigs .card{
+    border-radius: 50%;
+    width: 9%;
+    float: left;
+    margin-right: 30px;
+    margin-top: 23px;
+}
+.gigs .card img{
+  width: 120px;
+  border-radius: 50%;
+  border: 2px solid #EBF0F0;
+}
+footer{
+  background: #efb81d;
+  color: #fff;
+  padding: 20px 0;
+}
+.table-bordered>tbody>tr>td{
+  font-size: 14px;
+}
+.table-bordered>thead>tr>td{
+  font-weight: bold;
+  font-size: 15px;
+}
+.open {
+    background: #ffff00;
+    border: 1px solid #E4E435;
+    display: inline-block;
+    padding: 4px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    color: #373737;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+}
+.fixed{
+    background: #00ff00;
+    border: 1px solid #60DD60;
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    color: #373737;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+}
+.progress{
+    background: #005aff;
+    border: 1px solid #1F53B2;
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    margin-bottom: 0px;
+    height: auto;
+}
+.reopened{
+    background: #ff0000;
+    border: 1px solid #EE4747;
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+}
+.test{
+    background: #ffa500;
+    border: 1px solid #D9A340;
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    color: #373737;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+}
+.login-form {
+  margin-top:30%;
+  padding-bottom: 30%;
+}
+.login-wrapper{
+    background: url("../../img/login-back.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+form[role=login] {
+  color: #303030;
+  background: rgba(255, 255, 255, 0.91);
+  padding: 35px 80px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+  form[role=login] img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 35px;
+  }
+  form[role=login] input,
+  form[role=login] button {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  form[role=login] > div {
+    text-align: center;
+  }
+.help-block{
+  text-align: left;
+}
+.logout{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    border: 1px solid #606060;
+    font-family: 'latoregular';
+    padding: 9px 1rem;
+    letter-spacing: 1px;
+    background-color: #606060;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td{
+      background-color: #F9FAFA;
+}
+.table-striped>tbody>tr>td:last-child{
+  text-align: center;
+}
+.chart-container{
+    width: 90%;
+    border-radius: 8px;
+    padding: 21px;
+}
+
+.graphs .col-md-6{
+  padding: 50px 0 15px;
+}
+
+.btn-search{
+   background: transparent;
+   border: none;
+}
+.heading-box{
+    background: #F7FDFC;
+    padding: 15px 15px 15px 18px;
+    text-align: left;
+    margin-top: 0;
+    border: 1px solid #EDF0F0;
+    border-radius: 5px;
+    color: #383838;
+    font-weight: bold;
+}
+.heading-box span{
+    font-size: 15px;
+    color: #4d4d4d;
+}
+.nav>li{
+  width: 100%;
+}
