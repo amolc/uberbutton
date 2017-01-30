@@ -7,17 +7,8 @@ var debug = require('debug')('templates:server');
 var app = require('./api/api');
 
 app.use('/', express.static(__dirname + '/public'));
-app.use('/assets', express.static(__dirname + '/assets'));
-app.use('/web', express.static(__dirname + '/web'));
-app.use('/admin', express.static(__dirname + '/admin'));
 app.use('/api', express.static(__dirname + '/api'));
 app.use('/docs', express.static(__dirname + '/apidocs'));
-app.use('/html', express.static(__dirname + '/html'));
-app.use('/checkout', express.static(__dirname + '/checkout'));
-app.use('/productdetail', express.static(__dirname + '/productdetail'));
-app.use('/profile', express.static(__dirname + '/profile'));
-app.use('/addproduct', express.static(__dirname + '/addproduct'));
-app.use('/signin', express.static(__dirname + '/signin'));
 
 
 // Create HTTP server.

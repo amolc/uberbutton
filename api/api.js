@@ -17,6 +17,7 @@ app.use(bodyParser.json({ type: 'application/*+json' }));
 app.use(bodyParser.raw({ limit: '50mb' }));
 
 
+var uberapi = require('./uber.js');
 var userlogin = require('./userlogin.js');
 var todos = require('./todos.js');
 var device_register = require('./device_register.js');
@@ -75,6 +76,16 @@ app.get('/api/verify/:id', userlogin.verify);
       return userlogin.verify;
     }
 });*/
+
+// Uber API  
+app.get('/api/login', uberapi.login);
+app.get('/api/callback', uberapi.callback);
+
+
+
+
+
+
 
 app.get('/api/getUserDetails/:id', users.findById);
 app.post('/api/updateUser', users.updateUser);

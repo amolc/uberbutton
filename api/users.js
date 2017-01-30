@@ -382,3 +382,25 @@ exports.updateprofileimage = function(req, res) {
 		});
 
 }
+
+exports.gettodos = function(req,res){
+  	  todosCRUD.load({
+  	  	'user_id':req.body.user_id
+  	  },function(error, result) {
+	    if (result) {
+	      responsedata = {
+	        status: true,
+	        record: result,
+	        message: 'Todos List'
+	      }
+	      res.jsonp(responsedata);
+	    } else {
+	      responsedata = {
+	        status: false,
+	        record: result,
+	        message: 'Todos List Failed'
+	      }
+	      res.jsonp(responsedata);
+	    }
+  });
+}

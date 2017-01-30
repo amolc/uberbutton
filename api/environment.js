@@ -23,6 +23,15 @@ var enviroment = {
     }
 
 }
+
+enviroment.clientId = 'ayAOzvXg9--ml2LrPpGCERrBUBCJFRkP';
+enviroment.clientSecret =  'tnxat10ZPCIauBYiHk8ZoWNvls1_726vj9NDM6fB';
+enviroment.serverToken =   'CzNytyDuYA2RxjA-PxXmIwBooicN7WH14FCi_ahP';
+enviroment.redirectUri =  'http://localhost:18000/api/callback';
+enviroment.appname = 'fountaintechies';
+enviroment.name =  'fountaintechies' ;
+
+
 enviroment.uploadpath = '/home/tifanee/tifanee/assets/';
 enviroment.emailBaseUrl = 'http://node.fountaintechies.com:4500/';
 enviroment.assetpath = 'http://tifanee.fountaintechies.com/assets/';
